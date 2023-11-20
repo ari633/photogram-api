@@ -14,7 +14,7 @@ export const insertPhoto = (payload) => {
 export const selectPhotos = (limit) => {
   const db = global.sqlite3;
 
-  const sql = "SELECT * FROM photo";
+  const sql = "SELECT * FROM photo ORDER by id DESC";
 
   return new Promise((resolve, reject) => {
     db.all(sql, [], (err, rows) => {

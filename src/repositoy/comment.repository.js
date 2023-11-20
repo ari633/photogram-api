@@ -1,7 +1,7 @@
 export const selectCommentByPhotoId = (photoId) => {
   const db = global.sqlite3;
 
-  const sql = "SELECT * FROM comment where photo_id = ?";
+  const sql = "SELECT * FROM comment where photo_id = ? ORDER by id DESC";
 
   return new Promise((resolve, reject) => {
     db.all(sql, [photoId], (err, rows) => {
